@@ -10,7 +10,5 @@ if __name__ == '__main__':
     else:
         print('{} arguments:'.format(count))
 
-    i = 1
-    while i <= count:
-        print(i, ': {}'.format(sys.argv[i]))
-        i += 1
+    for i in range(count):
+        print('{}: {}'.format(i + 1, sys.argv[i + 1]))

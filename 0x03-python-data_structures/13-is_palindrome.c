@@ -5,7 +5,7 @@
  * @head: pointer to list
  *
  */
-void *reverse_listint(listint_t **head)
+void reverse_listint(listint_t **head)
 {
 	listint_t *prev, *next;
 

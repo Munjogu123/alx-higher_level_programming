@@ -4,16 +4,12 @@
  * reverse_listint - reverses a list
  * @head: pointer to list
  *
- * Return: pointer to the first node
  */
-listint_t *reverse_listint(listint_t **head)
+void *reverse_listint(listint_t **head)
 {
 	listint_t *prev, *next;
 
 	prev = NULL;
-
-	if (*head == NULL)
-		return (NULL);
 
 	while (*head != NULL)
 	{
@@ -23,7 +19,6 @@ listint_t *reverse_listint(listint_t **head)
 		(*head) = next;
 	}
 	(*head) = prev;
-	return (*head);
 }
 
 /**
@@ -36,12 +31,16 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *end, *mid, *start;
 
+	start = *head;
+	end = *head;
+	mid = NULL;
+
 	if (*head == NULL)
 		return (1);
 
 	while (1)
 	{
-		end = (*head)->next->next;
+		end = end->next->next;
 		if (end->next == NULL)
 		{
 			mid = start->next->next;
@@ -52,7 +51,7 @@ int is_palindrome(listint_t **head)
 			mid = start->next;
 			break;
 		}
-		start = (*head)->next;
+		start = start->next;
 	}
 	start->next = NULL;
 
@@ -61,9 +60,16 @@ int is_palindrome(listint_t **head)
 	while (*head && mid)
 	{
 		if ((*head)->n == mid->n)
-			return (1);
-		*head = (*head)->next;
-		mid = mid->next;
+		{
+			*head = (*head)->next;
+			mid = mid->next;
+		} else
+		{
+			return (0);
+		}
 	}
+	if (!mid)
+		return (1);
+
 	return (0);
 }

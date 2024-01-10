@@ -4,6 +4,9 @@ def roman_to_int(roman_string):
     res = 0
     length = len(roman_string)
 
+    if (roman_string == None):
+        return (0)
+
     for i in range(length):
         if i + 1 < length and r[roman_string[i]] < r[roman_string[i + 1]]:
             res -= r[roman_string[i]]

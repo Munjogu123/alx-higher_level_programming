@@ -4,7 +4,7 @@ def roman_to_int(roman_string):
     res = 0
     length = len(roman_string)
 
-    if roman_string is None:
+    if not roman_string or type(roman_string) != str:
         return (0)
 
     for i in range(length):

@@ -7,7 +7,7 @@ class Node:
 
     Args:
         data: refers to the list's data
-        next_node: next node of the linked list 
+        next_node: next node of the linked list
     """
     def __init__(self, data, next_node=None):
         self.data = data
@@ -21,7 +21,7 @@ class Node:
         the right type otherwise it raises a TypeError
         """
         return self.__data
-    
+
     @data.setter
     def data(self, value):
         if type(value) is not int:
@@ -36,12 +36,13 @@ class Node:
         node otherwise it raises a TypeError
         """
         return self.__next_node
-    
+
     @next_node.setter
     def next_node(self, value):
         if type(value) is not Node and value is not None:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
+
 
 """ Defines a singly-linked list """
 

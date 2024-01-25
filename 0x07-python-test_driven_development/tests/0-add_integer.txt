@@ -31,7 +31,7 @@ Adding 2 negative floats
 
 Adding 2 negative integers
     >>> add_integer(-5, -3)
-        -8
+    -8
 
 Adding an integer with a string
     >>> add_integer(2, "School")

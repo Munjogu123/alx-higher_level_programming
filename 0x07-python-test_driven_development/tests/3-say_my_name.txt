@@ -1,0 +1,30 @@
+Test cases for 3-say_my_name module
+===================================
+
+The module prints the name of a person
+
+Usage
+=====
+
+Importing the function module
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Printing with strings used as parameters
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+Printing with first parameter as an integer
+    >>> say_my_name(24, "Smith")
+    Traceback (most recent call last):
+            ...
+    TypeError: first_name must be a string
+
+Printing with second parameter as an integer
+    >>> say_my_name("John", 24)
+    Traceback (most recent call last):
+            ...
+    TypeError: last_name must be a string
+
+Printing without inputting the second parameter
+    >>> say_my_name("John")
+    My name is John 

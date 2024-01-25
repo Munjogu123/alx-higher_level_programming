@@ -1,0 +1,50 @@
+Test cases for 2-matrix_divided module
+======================================
+
+The 2-matrix_divided divides a matrix by a num specified in the parameter divides
+
+Usage
+=====
+
+Importing function from module
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Dividing a 2d list of the same size by an integer
+    >>> matrix_divided([[1,2,3], [4,5,6]], 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Dividing a 2d list of the same size by a negative integer
+    >>> matrix_divided([[1,2,3], [4,5,6]], -3)
+    [[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
+
+Dividing a 2d list of the same size by a float
+    >>> matrix_divided([[1,2,3], [4,5,6]], 3.5)
+    [[0.29, 0.57, 0.86], [1.14, 1.43, 1.71]]
+
+Dividing a 2d list of the same size by a negative float
+    >>> matrix_divided([[1,2,3], [4,5,6]], -3.5)
+    [[-0.29, -0.57, -0.86], [-1.14, -1.43, -1.71]]
+
+Dividing 2d list by 0
+    >>> matrix_divided([[1,2,3], [4,5,6]], 0)
+    Traceback (most recent call last):
+            ...
+    ZeroDivisionError: division by zero
+
+Dividng a 2d list by a string
+    >>> matrix_divided([[1,2,3],[4,5,6]], "2")
+    Traceback (most recent call last):
+            ...
+    TypeError: div must be a number
+
+Dividing by a 2d list with its rows varying in length
+    >>> matrix_divided([[1,2,3],[4,5]], 3)
+    Traceback (most recent call last):
+            ...
+    TypeError: Each row of the matrix must have the same size
+
+Dividing a 1d list instead of a 2d list
+    >>> matrix_divided([1,2,3], 3)
+    Traceback (most recent call last):
+            ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats

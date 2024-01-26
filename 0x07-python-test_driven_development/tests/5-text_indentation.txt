@@ -1,0 +1,39 @@
+Test cases for the 5-text_indentation module
+============================================
+
+This module formats text according to specifications
+
+Usage
+=====
+
+Importing function from the module
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Testing function with an integer
+    >>> text_indentation(1234.)
+    Traceback (most recent call last):
+            ...
+    TypeError: text must be a string
+
+Testing with a string with a '.'
+    >>> text_indentation("My name is Fred. I am 20 years old")
+    My name is Fred.
+    <BLANKLINE>
+    I am 20 years old
+
+Testing with a string with a '?'
+    >>> text_indentation("My name is Fred? I am 20 years old")
+    My name is Fred?
+    <BLANKLINE>
+    I am 20 years old
+
+Testing with a string with a ':'
+    >>> text_indentation("My name is Fred: I am 20 years old")
+    My name is Fred:
+    <BLANKLINE>
+    I am 20 years old
+
+Testing with a string with a '\n'
+    >>> text_indentation("My name is Fred\n I am 20 years old")
+    My name is Fred
+    I am 20 years old

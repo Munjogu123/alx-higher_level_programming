@@ -62,13 +62,12 @@ Trying value that is a float
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [TypeError] float must be an integer
 
-Checking for no arguments
-    >>> bg = BaseGeometry()
-    >>> try:
-    ...     bg.integer_validator()
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-	[TypeError] BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+Checking for no arguments to integer_validator:
+	  >>> b.integer_validator()
+	  Traceback (most recent call last):
+          ...
+	  TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
 
 Checking for one argument
     >>> bg = BaseGeometry()

@@ -29,3 +29,19 @@ Trying value that is negative
     ... except Exception as e:
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [ValueError] distance must be greater than 0
+
+Trying value that is negative
+    >>> bg = BaseGeometry()
+    >>> try:
+    ...     bg.integer_validator("list", [1, 2, 4])
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] list must be an integer
+
+Trying value that is negative
+    >>> bg = BaseGeometry()
+    >>> try:
+    ...     bg.integer_validator("tuple", (1, 2))
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] tuple must be an integer

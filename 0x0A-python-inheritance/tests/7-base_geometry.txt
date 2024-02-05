@@ -61,3 +61,27 @@ Trying value that is a float
     ... except Exception as e:
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [TypeError] float must be an integer
+
+Checking for no arguments
+    >>> bg = BaseGeometry()
+    >>> try:
+    ...     bg.integer_validator()
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+	[TypeError] BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Checking for one argument
+    >>> bg = BaseGeometry()
+    >>> try:
+    ...     bg.integer_validator("age")
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+	[TypeError] BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+Checking for multiple arguments
+    >>> bg = BaseGeometry()
+    >>> try:
+    ...     bg.integer_validator("age", 20, 4)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+	[TypeError] BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given

@@ -30,7 +30,7 @@ Trying value that is negative
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [ValueError] distance must be greater than 0
 
-Trying value that is negative
+Trying value that is list
     >>> bg = BaseGeometry()
     >>> try:
     ...     bg.integer_validator("list", [1, 2, 4])
@@ -38,10 +38,26 @@ Trying value that is negative
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [TypeError] list must be an integer
 
-Trying value that is negative
+Trying value that is tuple
     >>> bg = BaseGeometry()
     >>> try:
     ...     bg.integer_validator("tuple", (1, 2))
     ... except Exception as e:
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [TypeError] tuple must be an integer
+
+Trying value that is dict
+    >>> bg = BaseGeometry()
+    >>> try:
+    ...     bg.integer_validator("dict", {"key": "value"})
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] dict must be an integer
+
+Trying value that is a float
+    >>> bg = BaseGeometry()
+    >>> try:
+    ...     bg.integer_validator("float", 1.5)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] float must be an integer

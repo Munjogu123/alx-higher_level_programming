@@ -7,6 +7,7 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
+    """ Defines a square """
     def __init__(self, size):
         """ Initializes size and checks if it is
         a positive integer """

@@ -7,4 +7,4 @@ LEFT JOIN tv_genres
 ON tv_genres.id = tv_show_genres.genre_id
 WHERE tv_genres.name = 'Comedy'
 GROUP by title
-ORDER BY tv_shows.title
+ORDER BY tv_shows.title;

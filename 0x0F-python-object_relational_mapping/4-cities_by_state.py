@@ -9,7 +9,10 @@ if __name__ == '__main__':
                          user=argv[1], passwd=argv[2], db=argv[3])
 
     cur = db.cursor()
-    cur.execute("SELECT cities.id, cities.name, states.name FROM cities, states WHERE states.id = cities.state_id")
+    cur.execute(
+        "SELECT cities.id, cities.name, states.name \
+        FROM cities, states \
+        WHERE states.id = cities.state_id")
     rows = cur.fetchall()
 
     for row in rows:

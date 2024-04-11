@@ -6,7 +6,8 @@ from sys import argv
 
 if __name__ == '__main__':
     """ lists all State objects from the database hbtn_0e_6_usa """
-    db_url = f'mysql+mysqldb://{argv[1]}:{argv[2]}@localhost/{argv[3]}'
+    db_url = "mysql+mysqldb://{}:{}@localhost/{}".format(
+        argv[1], argv[2], argv[3], pool_pre_ping=True)
     engine = create_engine(db_url)
 
     Session = sessionmaker(bind=engine)

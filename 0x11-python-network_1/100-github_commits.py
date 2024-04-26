@@ -6,7 +6,9 @@ import requests
 import sys
 
 if __name__ == '__main__':
-    url = f'https://api.github.com/repos/{sys.argv[1]}/{sys.argv[2]}/commits'
+    url = 'https://api.github.com/repos/{}/{}/commits'.format(
+        sys.argv[1], sys.argv[2]
+    )
 
     response = requests.get(url)
     commits = response.json()

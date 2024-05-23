@@ -1,0 +1,1 @@
+This directory contains code on JavaScript - Web scraping

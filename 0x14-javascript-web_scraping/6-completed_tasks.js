@@ -9,14 +9,13 @@ request(url, (error, response, body) => {
     return;
   }
 
+  const todos = JSON.parse(body);
   const completed = {};
-  body.forEach((todo) => {
-    if (todo.completed) {
-      if (!completed[todo.userId]) {
-        completed[todo.userId] = 1;
-      } else {
-        completed[todo.userId] += 1;
-      }
+  todos.forEach((todo) => {
+    if (todo.completed && completed[todo.userId] === undefined) {
+      completed[todo.userId] = 1;
+    } else if (todo.completed) {
+      completed[todo.userId] += 1;
     }
   });
   console.log(completed);
